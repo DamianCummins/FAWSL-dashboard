@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@carbon/grid": "^10.6.0",
     "@carbon/icons-react": "^10.6.0",
     "carbon-components": "^10.6.1",
     "carbon-components-react": "^7.6.1",

@@ -1,12 +1,12 @@
-import React from 'react';
-import FilterForm from "./components/FilterForm";
+import React from "react";
+import Header from "./components/Header";
 import DashboardContainer from "./components/DashboardContainer";
-import './App.css';
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <FilterForm />
+      <Header />
       <DashboardContainer />
     </div>
   );

@@ -10,13 +10,13 @@ import {
     XAxis, 
     YAxis
 } from "recharts";
-import "./Heatmap.css";
+import "./Heatmap.scss";
 
 export default class Heatmap extends React.Component {
 
     constructor(props) {
         super(props);
-
+        console.log(props);
         const locations = this.getPositionalData(this.props.data, this.props.playerName);
         const heatSectors = this.getHeatmapSectors(locations, 4, 4);
 
@@ -121,8 +121,8 @@ export default class Heatmap extends React.Component {
     render() {
         const { locations, heatSectors, scale } = this.state;
         return (
-            <div>
-                <h3>{this.props.playerName}</h3>
+            <div className="heatmap" style={{width: 120 * scale}}>
+                <h3>{this.props.playerName} ({this.props.playerPosition})</h3>
                 {this.renderScatterChart(locations, heatSectors, scale)}
             </div>
         );

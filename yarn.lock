@@ -874,6 +874,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@carbon/grid@^10.6.0":
+  version "10.6.0"
+  resolved "https://registry.yarnpkg.com/@carbon/grid/-/grid-10.6.0.tgz#299028aa862aedc9ffa60f4d90c4beb67fea4d33"
+  dependencies:
+    "@carbon/import-once" "10.3.0"
+    "@carbon/layout" "10.5.0"
+
 "@carbon/icon-helpers@10.4.0":
   version "10.4.0"
   resolved "https://registry.yarnpkg.com/@carbon/icon-helpers/-/icon-helpers-10.4.0.tgz#771ba51efcaa9d2be03800f8e0f50c7aa779febf"
@@ -883,6 +890,14 @@
   resolved "https://registry.yarnpkg.com/@carbon/icons-react/-/icons-react-10.6.0.tgz#e137ddb552111c571ccb1a2ac861be07fe1fb339"
   dependencies:
     "@carbon/icon-helpers" "10.4.0"
+
+"@carbon/import-once@10.3.0":
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@carbon/import-once/-/import-once-10.3.0.tgz#58617da4efb6d7a11352d8e6b7209da1d39f364d"
+
+"@carbon/layout@10.5.0":
+  version "10.5.0"
+  resolved "https://registry.yarnpkg.com/@carbon/layout/-/layout-10.5.0.tgz#02b79bb4713ea750622e432c9e8ada626cdb6555"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
