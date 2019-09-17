@@ -22,7 +22,8 @@ export default class Heatmap extends React.Component {
             locations: [],
             heatSectors: [],
             playerName: this.props.playerName,
-            scale: window.innerWidth <= 500 ? 3 : 5
+            vertical: window.innerWidth <= 500,
+            scale: 5
         };
 
         this.renderScatterChart = this.renderScatterChart.bind(this);
@@ -39,7 +40,7 @@ export default class Heatmap extends React.Component {
     }
 
     resize() {
-        this.setState({scale: window.innerWidth <= 500 ? 3 : 5});
+        this.setState({vertical: window.innerWidth <= 500});
     }
 
     getPositionalData = (events, playerName) => {
@@ -48,7 +49,7 @@ export default class Heatmap extends React.Component {
         }).map(evt => {
             return {
                 x: evt.location[0],
-                y: evt.location[1]
+                y: 80 - evt.location[1]
             }
         });
         return locations;
@@ -126,16 +127,63 @@ export default class Heatmap extends React.Component {
             <XAxis type="number" dataKey="x" hide domain={[0,120]}/>
             <YAxis type="number" dataKey="y" hide domain={[0,80]}/>
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter name="Heatmap" data={data} fill="#777777" />
+            <Scatter name="Heatmap" data={data} fill="#777777"/>
+        </ScatterChart>
+    );
+
+    renderVerticalScatterChart = (data, heatSectors, scale) => (
+        <ScatterChart
+            width={80*scale}
+            height={120*scale}
+            margin={{
+            top: 20, right: 20, bottom: 20, left: 20,
+            }}
+        >
+            <ReferenceDot y={12} x={40} r={10*scale} stroke="black"/>
+            <ReferenceDot y={60} x={40} r={10*scale} stroke="black"/>
+            <ReferenceDot y={108} x={40} r={10*scale} stroke="black"/>
+            <ReferenceArea y1={0} y2={18} x1={18} x2={80-18} fill="white" fillOpacity={1} stroke="black"/>
+            <ReferenceArea y1={102} y2={120} x1={18} x2={80-18} fill="white" fillOpacity={1} stroke="black"/>
+            <ReferenceArea y1={0} y2={6} x1={30} x2={80-30} fill="white" fillOpacity={1} stroke="black"/>
+            <ReferenceArea y1={114} y2={120} x1={30} x2={80-30} fill="white" fillOpacity={1} stroke="black"/>
+            {
+                heatSectors.map((sector, index) => (
+                    <ReferenceArea 
+                        key={index}
+                        y1={sector.x1}
+                        y2={sector.x2}
+                        x1={sector.y1}
+                        x2={sector.y2} 
+                        fill="green"
+                        fillOpacity={(sector.count / 100) * 2}
+                        stroke="white"
+                        strokeOpacity={0}
+                    />
+                ))
+            }
+            <ReferenceDot y={60} x={40} r={0.5*scale} fill="black" stroke="black"/>
+            <ReferenceDot y={12} x={40} r={0.5*scale} fill="black" stroke="black"/>
+            <ReferenceDot y={108} x={40} r={0.5*scale} fill="black" stroke="black"/>
+            <CartesianGrid />
+            <ReferenceLine y={60} stroke="black"/>
+            <ReferenceArea y1={0} y2={0.1} x1={36} x2={80-36} fill="black" fillOpacity={1} stroke="black"/>
+            <ReferenceArea y1={119.9} y2={120} x1={36} x2={80-36} fill="black" fillOpacity={1} stroke="black"/>
+            <XAxis type="number" dataKey="y" hide domain={[0,80]}/>
+            <YAxis type="number" dataKey="x" hide domain={[0,120]}/>
+            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+            <Scatter name="Heatmap" data={data} fill="#777777"/>
         </ScatterChart>
     );
 
     render() {
         const { locations, heatSectors, scale } = this.state;
         return (
-            <div className="heatmap" style={{width: 120 * scale}}>
+            <div className="heatmap">
                 <h6>{this.props.playerName} ({this.props.playerPosition})</h6>
-                {this.renderScatterChart(locations, heatSectors, scale)}
+                { this.state.vertical ?
+                    this.renderVerticalScatterChart(locations, heatSectors, scale)
+                    : this.renderScatterChart(locations, heatSectors, scale)
+                }
             </div>
         );
     }
