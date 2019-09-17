@@ -47,7 +47,6 @@ export default class DashboardContainer extends React.Component {
     }
 
     setPlayers = (selectedPlayers) => {
-        console.log(selectedPlayers);
         this.setState({
             selectedPlayers: selectedPlayers
         });
@@ -56,7 +55,8 @@ export default class DashboardContainer extends React.Component {
     render() {
         return (
             <div className="dashboardContainer">
-                <FilterForm 
+                <h4 className="title">Competition: {matches && matches[0] && matches[0].competition ? matches[0].competition.competition_name : ""}</h4>
+                <FilterForm
                     matches={matches}
                     setMatch={this.setMatch}
                     players={this.state.players}

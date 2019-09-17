@@ -1,4 +1,17 @@
+h2 {
+    padding: 50px 50px 0px;
+}
+
+h3 {
+    padding: 20px 50px 0px;
+}
+
 .chartGrid {
     display: inline-flex;
     flex-direction: row;
+    padding: 50px;
+}
+
+.title {
+    margin-top: 80px;
 }
