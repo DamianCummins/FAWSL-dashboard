@@ -2,11 +2,13 @@
   "name": "statsbomb-fawsl-dashboard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://damiancummins.github.io/FAWSL-dashboard",
   "dependencies": {
     "@carbon/grid": "^10.6.0",
     "@carbon/icons-react": "^10.6.0",
     "carbon-components": "^10.6.1",
     "carbon-components-react": "^7.6.1",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -17,6 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "pre-deploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
