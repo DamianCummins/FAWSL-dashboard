@@ -1,0 +1,4 @@
+.chartGrid {
+    display: inline-flex;
+    flex-direction: row;
+}
