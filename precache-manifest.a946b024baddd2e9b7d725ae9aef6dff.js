@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e0bb3e4594af8d36f1f484818ae57834",
+    "revision": "dc6093a0c65fb272bbb88ef6b2a7c841",
     "url": "/FAWSL-dashboard/index.html"
   },
   {
