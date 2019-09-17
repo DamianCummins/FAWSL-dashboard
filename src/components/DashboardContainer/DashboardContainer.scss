@@ -9,7 +9,8 @@ h5 {
 .chartGrid {
     display: inline-flex;
     flex-direction: row;
-    padding: 0px 50px 0px;
+    padding: 0px 5px 50px;
+    max-width: 100vh;
 }
 
 .title {
