@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FAWSL-dashboard/static/css/main.07069586.chunk.css",
+    "main.js": "/FAWSL-dashboard/static/js/main.d8981c30.chunk.js",
+    "main.js.map": "/FAWSL-dashboard/static/js/main.d8981c30.chunk.js.map",
+    "runtime~main.js": "/FAWSL-dashboard/static/js/runtime~main.6f192e2a.js",
+    "runtime~main.js.map": "/FAWSL-dashboard/static/js/runtime~main.6f192e2a.js.map",
+    "static/js/2.d838a44c.chunk.js": "/FAWSL-dashboard/static/js/2.d838a44c.chunk.js",
+    "static/js/2.d838a44c.chunk.js.map": "/FAWSL-dashboard/static/js/2.d838a44c.chunk.js.map",
+    "index.html": "/FAWSL-dashboard/index.html",
+    "precache-manifest.bdaca007f7a2124418072cf0a26212ab.js": "/FAWSL-dashboard/precache-manifest.bdaca007f7a2124418072cf0a26212ab.js",
+    "service-worker.js": "/FAWSL-dashboard/service-worker.js",
+    "static/css/main.07069586.chunk.css.map": "/FAWSL-dashboard/static/css/main.07069586.chunk.css.map"
+  }
+}
