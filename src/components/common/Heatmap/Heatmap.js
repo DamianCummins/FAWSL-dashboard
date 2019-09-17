@@ -23,7 +23,7 @@ export default class Heatmap extends React.Component {
             heatSectors: [],
             playerName: this.props.playerName,
             vertical: window.innerWidth <= 500,
-            scale: 5
+            scale: window.innerWidth <= 500 ? 4.5 : 5
         };
 
         this.renderScatterChart = this.renderScatterChart.bind(this);
@@ -40,7 +40,10 @@ export default class Heatmap extends React.Component {
     }
 
     resize() {
-        this.setState({vertical: window.innerWidth <= 500});
+        this.setState({
+            vertical: window.innerWidth <= 500,
+            scale: window.innerWidth <= 500 ? 4.5 : 5
+        });
     }
 
     getPositionalData = (events, playerName) => {
@@ -49,7 +52,7 @@ export default class Heatmap extends React.Component {
         }).map(evt => {
             return {
                 x: evt.location[0],
-                y: 80 - evt.location[1]
+                y: evt.location[1]
             }
         });
         return locations;
