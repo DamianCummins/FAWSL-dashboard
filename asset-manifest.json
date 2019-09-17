@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/FAWSL-dashboard/static/css/main.c0cd324b.chunk.css",
-    "main.js": "/FAWSL-dashboard/static/js/main.6cb58cc3.chunk.js",
-    "main.js.map": "/FAWSL-dashboard/static/js/main.6cb58cc3.chunk.js.map",
+    "main.js": "/FAWSL-dashboard/static/js/main.a0ff0b10.chunk.js",
+    "main.js.map": "/FAWSL-dashboard/static/js/main.a0ff0b10.chunk.js.map",
     "runtime~main.js": "/FAWSL-dashboard/static/js/runtime~main.6f192e2a.js",
     "runtime~main.js.map": "/FAWSL-dashboard/static/js/runtime~main.6f192e2a.js.map",
-    "static/js/2.0657326b.chunk.js": "/FAWSL-dashboard/static/js/2.0657326b.chunk.js",
-    "static/js/2.0657326b.chunk.js.map": "/FAWSL-dashboard/static/js/2.0657326b.chunk.js.map",
+    "static/js/2.47a404cd.chunk.js": "/FAWSL-dashboard/static/js/2.47a404cd.chunk.js",
+    "static/js/2.47a404cd.chunk.js.map": "/FAWSL-dashboard/static/js/2.47a404cd.chunk.js.map",
     "index.html": "/FAWSL-dashboard/index.html",
-    "precache-manifest.67117681089a87a1835aefaf3e87103e.js": "/FAWSL-dashboard/precache-manifest.67117681089a87a1835aefaf3e87103e.js",
+    "precache-manifest.43f142b9afb9fd7a38f4f82377d7578c.js": "/FAWSL-dashboard/precache-manifest.43f142b9afb9fd7a38f4f82377d7578c.js",
     "service-worker.js": "/FAWSL-dashboard/service-worker.js",
     "static/css/main.c0cd324b.chunk.css.map": "/FAWSL-dashboard/static/css/main.c0cd324b.chunk.css.map"
   }
