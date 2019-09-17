@@ -17,17 +17,29 @@ export default class Heatmap extends React.Component {
     constructor(props) {
         super(props);
         console.log(props);
-        const locations = this.getPositionalData(this.props.data, this.props.playerName);
-        const heatSectors = this.getHeatmapSectors(locations, 4, 4);
 
         this.state = {
-            locations,
-            heatSectors,
+            locations: [],
+            heatSectors: [],
             playerName: this.props.playerName,
-            scale: this.props.scale ? this.props.scale : 5
+            scale: window.innerWidth <= 760 ? 3.5 : 5
         };
 
         this.renderScatterChart = this.renderScatterChart.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener("resize", this.resize.bind(this));
+        const locations = this.getPositionalData(this.props.data, this.props.playerName);
+        const heatSectors = this.getHeatmapSectors(locations, 4, 4);
+        this.setState({
+            locations,
+            heatSectors
+        });
+    }
+
+    resize() {
+        this.setState({scale: window.innerWidth <= 760 ? 3.5 : 5});
     }
 
     getPositionalData = (events, playerName) => {
@@ -122,7 +134,7 @@ export default class Heatmap extends React.Component {
         const { locations, heatSectors, scale } = this.state;
         return (
             <div className="heatmap" style={{width: 120 * scale}}>
-                <h3>{this.props.playerName} ({this.props.playerPosition})</h3>
+                <h4>{this.props.playerName} ({this.props.playerPosition})</h4>
                 {this.renderScatterChart(locations, heatSectors, scale)}
             </div>
         );

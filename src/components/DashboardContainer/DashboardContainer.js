@@ -64,8 +64,8 @@ export default class DashboardContainer extends React.Component {
                 />
                 {this.state.match ? 
                     <div>
-                        <h2>{this.state.match.home_team.home_team_name} ({this.state.match.home_score}) vs {this.state.match.away_team.away_team_name} ({this.state.match.away_score})</h2>
-                        <h3>Date: {this.state.match.match_date}</h3>
+                        <h4>{this.state.match.home_team.home_team_name} ({this.state.match.home_score}) vs {this.state.match.away_team.away_team_name} ({this.state.match.away_score})</h4>
+                        <h5>Date: {this.state.match.match_date}</h5>
                         <div className="chartGrid">
                             <div class="bx--grid">
                                 <div class="bx--row">
